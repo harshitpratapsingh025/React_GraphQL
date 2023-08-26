@@ -2,6 +2,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import './App.css';
 import { Registration } from './container/pages/Registration/index';
 import { LoginForm } from './container/pages/Login/index';
+import { Dashboard } from './container/pages/Dashboard/index';
+import { VendorListing } from './container/pages/Vendor/vendorListing';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const client = new ApolloClient({
@@ -20,7 +22,15 @@ function App() {
     },
     {
       path: '/dashbord',
-      element: <Registration />,
+      element: <Dashboard />,
+    },
+    {
+      path: '/users',
+      element: <Dashboard />,
+    },
+    {
+      path: '/vendors',
+      element: <VendorListing />,
     },
   ]);
   return (

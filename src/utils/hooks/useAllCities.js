@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
-import { gql, useLazyQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
+import { GET_CITY_STATE } from './../../graphql/query/city';
 
-const GET_CITY_STATE = gql`
-  query getProject($id: ID!) {
-    cityByState(stateId: $id) {
-      name
-    }
-  }
-`;
 const UseAllCities = (state_id) => {
   const [allCities, setAllCities] = useState([]);
   const [getAllCity, { data }] = useLazyQuery(GET_CITY_STATE);
